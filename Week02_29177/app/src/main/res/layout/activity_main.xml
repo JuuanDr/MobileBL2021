@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:text="Angka 1 : " />
+
+            <EditText
+                android:id="@+id/etAngka1"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/Angka1"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:text="Angka 2 : " />
+
+            <EditText
+                android:id="@+id/etAngka2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/Angka2"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <Button
+                android:id="@+id/operandTambah"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Tambah"
+                android:layout_marginRight="10dp">
+            </Button>
+
+            <Button
+                android:id="@+id/operandKurang"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Kurang">
+            </Button>
+
+            <Button
+                android:id="@+id/operandKali"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Kali">
+            </Button>
+
+            <Button
+                android:id="@+id/operandBagi"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Bagi">
+            </Button>
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="33dp"
+                android:text="Hasil : " />
+
+            <TextView
+                android:id="@+id/tvHasil"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text=""/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="">
+        </TextView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

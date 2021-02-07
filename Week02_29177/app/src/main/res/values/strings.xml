@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="Angka1" />
+    <string name="Angka2" />
+    <string name="Tambah">+</string>
+    <string name="Kurang">-</string>
+    <string name="Kali">x</string>
+    <string name="Bagi">/</string>
+    <string name="Hasil" />
+</resources>
