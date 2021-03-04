@@ -92,6 +92,7 @@ public class CustomView extends View {
             case MotionEvent.ACTION_UP:
                 lepas();
                 break;
+            default:
         }
         return true;
     }
@@ -131,6 +132,7 @@ public class CustomView extends View {
                 rangeY = y;
             }
         }
+        invalidate();
     }
     private void lepas() {
         if(!clear){
