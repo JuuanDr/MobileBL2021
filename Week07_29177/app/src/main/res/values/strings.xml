@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Week07_29177</string>
+    <string name="capturePic">Ambil Foto</string>
+    <string name="captureVid">Ambil Video</string>
+</resources>
