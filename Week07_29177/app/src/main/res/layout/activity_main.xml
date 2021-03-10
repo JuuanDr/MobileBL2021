@@ -7,22 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/picView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"/>
     <Button
-        android:id="@+id/btnCapturePic"
+        android:id="@+id/btnCam"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/capturePic"/>
-    <VideoView
-        android:id="@+id/vidView"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:text="Tutorial Camera"/>
     <Button
-        android:id="@+id/btnCaptureVid"
+        android:id="@+id/btnGallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/captureVid"/>
+        android:layout_marginTop="10dp"
+        android:text="Tutorial Galery"/>
 </LinearLayout>
