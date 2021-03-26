@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MusicPlayer</string>
+    <string name="myNim">00000029177</string>
+    <string name="myName">Juan Daniel Richardo</string>
+    <string name="myClass">BL</string>
+    <string name="login">LogIn</string>
+    <string name="logout">LogOut</string>
+    <string name="Profile">Profile</string>
+    <string name="myTeman">
+        Aloisius Gonzaga\nErika Atmaja\nFrans Imanuel\n
+    </string>
+</resources>
