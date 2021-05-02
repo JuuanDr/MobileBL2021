@@ -12,14 +12,6 @@ public class user {
     @SerializedName("body")
     private String body;
 
-    public user(){}
-    public user(String userId, String id, String title, String body) {
-        this.userId = userId;
-        this.id = id;
-        this.title = title;
-        this.body = body;
-    }
-
     public String getUserId() {
         return userId;
     }

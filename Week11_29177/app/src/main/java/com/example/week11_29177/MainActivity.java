@@ -9,14 +9,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.week11_29177.Adapter.userAdapter;
-import com.example.week11_29177.Model.getUser;
 import com.example.week11_29177.Model.user;
 import com.example.week11_29177.Rest.ApiClient;
 import com.example.week11_29177.Rest.ApiInterface;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnIns;
     ApiInterface mApiInterface;
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    userAdapter mAdapter;
+    ArrayList<user> mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,29 +37,28 @@ public class MainActivity extends AppCompatActivity {
         btnIns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, InsertActivity.class));
+                Toast.makeText(MainActivity.this, "Not Available yet", Toast.LENGTH_LONG).show();
             }
         });
         mRecyclerView = findViewById(R.id.recyclerView);
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-        refresh();
+        getData();
     }
 
-    private void refresh() {
-        Call<getUser> userCall = mApiInterface.getUser();
-        userCall.enqueue(new Callback<getUser>() {
+    private void getData() {
+        Call<ArrayList<user>> userCallBack = mApiInterface.getUser();
+        userCallBack.enqueue(new Callback<ArrayList<user>>() {
             @Override
-            public void onResponse(Call<getUser> call, Response<getUser> response) {
-                    List<user> userList = response.body().getListDataUser();
-                    Log.d("Retrofit Get", "Jumlah data User: " + String.valueOf(userList.size()));
-                    mAdapter = new userAdapter(userList);
+            public void onResponse (Call<ArrayList<user>> call, Response<ArrayList<user>> response) {
+                    mUser = response.body();
+                    Log.d("Retrofit Get", "Jumlah data User: " + String.valueOf(mUser.size()));
+                    mAdapter = new userAdapter(mUser);
                     mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
-            public void onFailure(Call<getUser> call, Throwable t) {
+            public void onFailure(Call<ArrayList<user>> call, Throwable t) {
                 Log.e("Retrofit Get Fail", t.toString());
             }
         });
